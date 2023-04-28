@@ -18,13 +18,45 @@ public class Character {
 
     @Override
     public String toString() {
-        return  name + ", level = " + level + ", strength = " + strength + ", gold = " + gold + ", hp = " + hp + ", isAlive = " + isAlive + ", xp = " + xp;
+        StringBuilder sb = new StringBuilder();
+        sb.append("Your character is :").append(System.lineSeparator());
+        sb.append("┌─────────┬──────┬─────────┬──────┬────┬────────┬──────┐").append(System.lineSeparator());
+        sb.append("│ Name    │ Level│ Strength│ Gold │ HP │ Alive  │ XP   │").append(System.lineSeparator());
+        sb.append("├─────────┼──────┼─────────┼──────┼────┼────────┼──────┤").append(System.lineSeparator());
+        sb.append(String.format("│ %-7s │ %-4d │ %-7d │ %-4d │ %-2d │ %-6b │ %-4d │",
+                name, level, strength, gold, hp, isAlive, xp)).append(System.lineSeparator());
+        sb.append("└─────────┴──────┴─────────┴──────┴────┴────────┴──────┘").append(System.lineSeparator());
+
+        return sb.toString();
     }
 
-    public String animalToString()
-    {
-        return name + ", level = " + level + ", hp = " + hp + " gold = " + gold;
+    public String afterBattleToString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Your character's stats after the battle: ").append(System.lineSeparator());
+        sb.append("┌─────────┬──────┬─────────┬──────┬────┬────────┬──────┐").append(System.lineSeparator());
+        sb.append("│ Name    │ Level│ Strength│ Gold │ HP │ Alive  │ XP   │").append(System.lineSeparator());
+        sb.append("├─────────┼──────┼─────────┼──────┼────┼────────┼──────┤").append(System.lineSeparator());
+        sb.append(String.format("│ %-7s │ %-4d │ %-7d │ %-4d │ %-2d │ %-6b │ %-4d │",
+                name, level, strength, gold, hp, isAlive, xp)).append(System.lineSeparator());
+        sb.append("└─────────┴──────┴─────────┴──────┴────┴────────┴──────┘").append(System.lineSeparator());
+
+        return sb.toString();
     }
+
+    public String finalStatsToString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Your character's final stats are:  ").append(System.lineSeparator());
+        sb.append("┌─────────┬──────┬─────────┬──────┬────┬────────┬──────┐").append(System.lineSeparator());
+        sb.append("│ Name    │ Level│ Strength│ Gold │ HP │ Alive  │ XP   │").append(System.lineSeparator());
+        sb.append("├─────────┼──────┼─────────┼──────┼────┼────────┼──────┤").append(System.lineSeparator());
+        sb.append(String.format("│ %-7s │ %-4d │ %-7d │ %-4d │ %-2d │ %-6b │ %-4d │",
+                name, level, strength, gold, hp, isAlive, xp)).append(System.lineSeparator());
+        sb.append("└─────────┴──────┴─────────┴──────┴────┴────────┴──────┘").append(System.lineSeparator());
+
+        return sb.toString();
+    }
+
+
 
 
 
@@ -63,9 +95,6 @@ public class Character {
 
             // set the enemy's hp to 0
             enemy.setHp(0);
-
-            // Add xp to the user
-
 
         } else {
             enemy.setHp(enemyHpAfterHit); // update the enemy's hp to the new value

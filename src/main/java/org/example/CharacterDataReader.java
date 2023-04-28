@@ -25,8 +25,9 @@ public class CharacterDataReader {
                 int strength = Integer.parseInt(parts[2]);
                 int gold = Integer.parseInt(parts[3]);
                 int hp = Integer.parseInt(parts[4]);
-                Character character = new Character("Player", 1, 10, 0, 100, new RealRandomGenerator());
 
+                //Create a new Character object with the values from the CSV file
+                Character character = new Character(name, level, strength, gold, hp, new RealRandomGenerator());
                 characters.add(character);
             }
         } catch (FileNotFoundException e) {

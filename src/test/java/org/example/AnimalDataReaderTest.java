@@ -24,7 +24,7 @@ public class AnimalDataReaderTest {
     public void testReadAnimalData() throws FileNotFoundException {
         // we will create a spy of the animal data reader class to mock some of its behaviour
         AnimalDataReader spyAnimalDataReader = Mockito.spy(animalDataReader);
-        //create the file object so we can read from the CSV file
+        //create the file object, so we can read from the CSV file
         File file = new File(AnimalDataReader.ANIMAL_DATA_FILE_PATH);
 
         //scanner that reads the contents of teh CSV FILE

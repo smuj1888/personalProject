@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
@@ -16,7 +16,7 @@ public class CharacterTest {
 
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
+
         mockRandomGenerator = Mockito.mock(RandomGenerator.class);
     }
 
@@ -74,7 +74,7 @@ public class CharacterTest {
     public void testGainXpWithoutLevelUp() {
         //first we will create a stub object that returns a
         //fixed value of 3
-        //this will allow my test to take away the randomness element
+        //this will allow my test to take away the randomness element,
         //so we can test the behaviour properly
         RandomGenerator stubRandomGen = new StubRandomGenerator(3);
         //new character object using the stub random generator
@@ -90,7 +90,7 @@ public class CharacterTest {
     public void testGainXpWithLevelUp() {
         //first we will create a stub object that returns a
         //fixed value of 3
-        //this will allow my test to take away the randomness element
+        //this will allow my test to take away the randomness element,
         //so we can test the behaviour properly
         RandomGenerator stubRandomGen = new StubRandomGenerator(3);
 
@@ -115,7 +115,7 @@ public class CharacterTest {
         assertEquals(2, character.getLevel());
         //increase the strength by 3
         assertEquals(13, character.getStrength());
-        //When I call the levelup method the characters xp is reduced by the old threshold
+        //When I call the level up method the characters xp is reduced by the old threshold
         assertTrue(character.getXp() < 200 - 150);
         //ensure that the character's XP threshold has increased by 100
         assertEquals(250, character.getXpThreshold());

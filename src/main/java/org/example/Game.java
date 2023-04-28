@@ -23,7 +23,7 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
 
         while (enemy.isAlive()) {
-            System.out.println("Your enemy is a " + enemy.getName() + ", level = " + enemy.getLevel() + ", hp = " + enemy.getHp() + " gold = " + enemy.getGold());
+            System.out.println(enemy.toString());
             System.out.println("Enter a to shoot an arrow at the animal");
             System.out.println("Enter q to quit the game");
 
@@ -34,7 +34,7 @@ public class Game {
                     int xpGained = 50; // assume the character gains 50 XP for killing an enemy
                     player.gainXp(xpGained);
                     System.out.println("You killed " + enemy.getName() + " and get " + enemy.getGold() + " Gold");
-                    System.out.println("Your character's stats after the battle: " + player.toString());
+                    System.out.println(player.afterBattleToString());
                     System.out.println("");
                     System.out.println("Do you want to continue hunting another animal? (y/n)");
 
@@ -52,10 +52,14 @@ public class Game {
                         // get a new random animal from the list
                         enemy = animals.get(rng.nextInt(animals.size()));
                     } else if (userInput.equals("n")) {
+                        System.out.println("Thank you for playing ");
+                        System.out.println(player.finalStatsToString());
                         System.exit(0);
                     }
                 }
             } else if (userSelection.equals("q")) {
+                System.out.println("Thank you for playing ");
+                System.out.println(player.finalStatsToString());
                 System.exit(0);
             }
         }
