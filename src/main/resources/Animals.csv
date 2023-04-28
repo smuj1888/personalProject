@@ -1,0 +1,11 @@
+Name,Level,Strength,Gold,InitialHP
+Rabbit,1,5,10,20
+Deer,2,10,20,30
+Wolf,3,15,30,40
+Bear,4,20,40,50
+Fox,5,10,20,25
+Boar,2,15,25,35
+Moose,3,25,50,60
+Raccoon,1,5,5,15
+Hedgehog,1,5,5,10
+Badger,2,10,15,30
