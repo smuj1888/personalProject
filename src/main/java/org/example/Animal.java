@@ -1,12 +1,11 @@
 package org.example;
 
-public class Enemy extends Character{
+public class Animal extends Character{
 
 
-    public Enemy(String name, int level, int strength, int gold, int initialHp) {
-        super(name, level, strength, gold, initialHp);
-        // set the initial HP to 20
+    public Animal(String name, int level, int strength, int gold, int hp, RandomGenerator randomGenerator) {
+        super(name, level, strength, gold, hp, randomGenerator);
         this.setHp(20);
+        boolean isAlive = true;
     }
-
 }
